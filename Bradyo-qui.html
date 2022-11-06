@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <title>Chateando.Org | Türkiye'nin SanaL Sohbet Odaları</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" sizes="192x192" href="images/highresicon.png">
+  <link rel="stylesheet" href="css/irc.min.css">
+  <!--[if IE]>
+
+  <![endif]-->
+  <script type="text/javascript" src="js/qwebirc.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/irc.min.js"></script>
+  <script type="text/javascript">
+
+    $.noConflict();
+    var ui = new qwebirc.ui.Interface("ircui", qwebirc.ui.QUI, {"appTitle":"Chateando.Org | Sohbet Odaları","dynamicBaseURL":"","baseURL":"https://radio.chateandogratis.net","validateNickname":false,"networkServices":["Q!TheQBot@CServe.quakenet.org"],"nickValidation":{"maxLen":15,"validSubChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_[]{}`^\\|0123456789-","validFirstChar":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_[]{}`^\\|","minLen":2},"staticBaseURL":"","loginRegex":"^You are now logged in as [^ ]+\\.$","networkName":"Chateando"});
+
+    (function( $ ) {
+    $(function() {  
+    if (url_getir('nick')) {
+    $('#ilk_nick').val(url_getir('nick'));
+    } else {
+
+    if (url_getir('firstname')) {
+      $('#ilk_nick').val(url_getir('firstname'));
+    }
+    }
+
+    if (url_getir('password')) {
+    sifre = url_getir('password');
+    }
+
+    if (url_getir('facebook')) {
+    facebook = url_getir('facebook');
+    console.log("FBID:"+facebook);
+    }
+
+    if (url_getir('channel')) {
+    $('#kanallar').val('#'+url_getir('channel'));
+    } 
+    if (url_getir('auto')) {
+    document.getElementById("baglan_hemen").click();
+    } 
+
+    });
+    })(jQuery);
+
+    function url_getir(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+ </script>
+ <script type="text/javascript" src="js/soundmanager2-nodebug-jsmin.js"></script>
+ </head>
+ <body> 
+ <div id="ircui">
+ <noscript>
+ <div id="noscript">Javascript is required to use IRC.</div>
+ </noscript>
+ </div>
+ <div class="radyomasp" style="width: 352px;
+    position: absolute;
+    top: 20px;
+    right: 38%;">
+    <span>
+	<center><object width="450" height="35" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="flashvars" value="shoutcast=https://radio.hispanochat.org/:8000&amp;autoplay=1" /><param name="src" value="http://radyohizmeti.com/skin/marjinal.swf" /><embed width="380" height="30" type="application/x-shockwave-flash" src="http://radyohizmeti.com/skin/marjinal.swf" flashvars="shoutcast=https://radio.hispanochat.org/:8000&amp;autoplay=1" /></object>
+  </span>
+  </body>
+  </html>
+
+

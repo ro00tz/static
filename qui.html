@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <title>Web Chat OnlyIRC.0rg</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" sizes="192x192" href="images/highresicon.png">
+  <link rel="stylesheet" href="css/irc.min.css?ver=02">
+  <script src="//cdn.jsdelivr.net/alertifyjs/1.7.1/alertify.min.js"></script>
+  <script type="text/javascript" src="js/qwebirc.js?ver=02"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/irc.min.js"></script>
+ <audio id="stream" controls="none" preload="" autoplay="true" style="width: 350px; border-top-right-radius: 3px;
+  border-top-left-radius: 3px;  position:absolute; margin-top:10px; left:340px; z-index:100000;">
+<source src="https://music.onlyirc.org:8000/radio.mp3;" type="audio/mpeg">
+</audio>
+<script>
+var audio = document.getElementById('stream');
+audio.volume = 1.0;
+</script> 
+ 
+  <script type="text/javascript"> 
+
+    var ui = new qwebirc.ui.Interface("ircui", qwebirc.ui.QUI, {"appTitle":"OnlyIRC WebChat","dynamicBaseURL":"","baseURL":"http://chat.onlyirc.org","validateNickname":false,"networkServices":["Q!TheQBot@CServe.quakenet.org"],"nickValidation":{"maxLen":15,"validSubChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_[]{}`^\\|0123456789-","validFirstChar":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_[]{}`^\\|","minLen":2},"staticBaseURL":"","loginRegex":"^You are now logged in as [^ ]+\\.$","networkName":"WebChat OnlyIRC"});
+    $.noConflict();
+
+    (function( $ ) {
+    $(function() {  
+    if (url_getir('nick')) {
+    $('#ilk_nick').val(url_getir('nick'));
+    } else {
+
+    if (url_getir('firstname')) {
+      $('#ilk_nick').val(url_getir('firstname'));
+    }
+    }
+
+    if (url_getir('password')) {
+    sifre = url_getir('password');
+    }
+
+    if (url_getir('facebook')) {
+    facebook = url_getir('facebook');
+    console.log("FBID:"+facebook);
+    }
+
+    if (url_getir('channel')) {
+    $('#kanallar').val('#'+url_getir('channel'));
+    } 
+    <!-- if (url_getir('auto')) { -->
+    <!-- document.getElementById("baglan_hemen").click(); -->
+    <!-- }  -->
+
+    });
+    })(jQuery);
+
+    function url_getir(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+  </script>
+  <script type="text/javascript" src="js/soundmanager2-nodebug-jsmin.js"></script>
+</head>
+<body> 
+
+</iframe>
+  <div id="ircui">
+    <noscript>
+      <div id="noscript">Javascript is required to use IRC.</div>
+    </noscript>
+  </div>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.7.1/css/alertify.min.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.7.1/css/themes/bootstrap.min.css"/>
+</body>
+
+</html>
+
